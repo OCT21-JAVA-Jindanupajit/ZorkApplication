@@ -61,6 +61,7 @@ public class Main {
 
         if (newRoom != Data.currentRoom) {
             Data.counter++;
+            Data.currentRoom = newRoom;
         }
 
     }

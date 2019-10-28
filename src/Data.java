@@ -20,21 +20,21 @@ public class Data {
                 roomName.put(1,"foyer");
                 roomLocked.put(1,false);
                 ArrayList<String> itemInRoom1 = new ArrayList<>();
-                itemInRoom1.add("dead scorpion");
+                        itemInRoom1.add("dead scorpion");
                 roomItemCollection.put(1,itemInRoom1);
                 HashMap<String, Integer> doorInRoom1= new HashMap<>();
-                doorInRoom1.put("N",2);
+                        doorInRoom1.put("N",2);
                 roomDoorCollection.put(1,doorInRoom1);
 
                 roomName.put(2,"front room");
                 roomLocked.put(2,false);
                 ArrayList<String> itemInRoom2 = new ArrayList<>();
-                itemInRoom2.add("piano");
+                        itemInRoom2.add("piano");
                 roomItemCollection.put(2,itemInRoom2);
                 HashMap<String, Integer> doorInRoom2= new HashMap<>();
-                doorInRoom2.put("S",1);
-                doorInRoom2.put("W",3);
-                doorInRoom2.put("E",4);
+                        doorInRoom2.put("S",1);
+                        doorInRoom2.put("W",3);
+                        doorInRoom2.put("E",4);
                 roomDoorCollection.put(2,doorInRoom2);
 
 
