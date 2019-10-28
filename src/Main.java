@@ -6,21 +6,16 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
-    public static HashMap<Integer, String> roomName = new HashMap<>();
-    public static HashMap<Integer, Boolean> roomLocked = new HashMap<>();
-    public static HashMap<Integer, ArrayList<String>> roomItemCollection = new HashMap<>();
-    public static HashMap<Integer, HashMap<String, Integer>> roomDoorCollection = new HashMap<>();
-    public static int counter= 0;
-    public static int currentRoom = 1;
+
 
     public static void main(String[] args){
-        Scanner keyboard=new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
         String userInput;
 
         boolean quitRequested = false;
 
 
-        init(roomName, roomLocked, roomItemCollection, roomDoorCollection);
+        init(Data.roomName, Data.roomLocked, Data.roomItemCollection, Data.roomDoorCollection);
 
 
         do {
@@ -52,7 +47,7 @@ public class Main {
 
         } while (!quitRequested);
 
-        quit(counter);
+        quit(Data.counter);
 
 
     }
@@ -150,6 +145,7 @@ public class Main {
 
 
     private static void move(String direction) {
+        int newRoom = DoorControl.moveThrough(Data.currentRoom, direction);
 
     }
 
