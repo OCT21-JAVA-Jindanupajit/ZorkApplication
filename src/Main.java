@@ -1,5 +1,7 @@
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -61,16 +63,25 @@ public class Main {
 
         roomName.put(1,"foyer");
         roomLocked.put(1,false);
+        ArrayList<String> itemInRoom1 = new ArrayList<>();
+                itemInRoom1.add("dead scorpion");
+        roomItemCollection.put(1,itemInRoom1);
 
         roomName.put(2,"front room");
         roomLocked.put(2,false);
+        ArrayList<String> itemInRoom2 = new ArrayList<>();
+            itemInRoom2.add("piano");
+        roomItemCollection.put(1,itemInRoom2);
 
 
         roomName.put(3,"library");
         roomLocked.put(3,false);
+        ArrayList<String> itemInRoom3 = new ArrayList<>();
+            itemInRoom3.add("spiders");
+        roomItemCollection.put(3,itemInRoom3);
 
         roomName.put(4,"kitchen");
-        roomLocked.put(4,false);
+        roomLocked.put(4,false);`
 
         roomName.put(5,"dining room");
         roomLocked.put(5,false);
