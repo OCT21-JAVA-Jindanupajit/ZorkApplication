@@ -67,7 +67,12 @@ public class Main {
 
     private static void quit(int counter) {
 
-        System.out.printf("You moved %d times",counter);
+        System.out.printf("You moved %d times\n",counter);
+
+        if (Ghost.FollowByGhost())
+            System.out.println("You are following by ghost!");
+        else
+            System.out.println("You are alone!");
     }
 }
 
