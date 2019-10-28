@@ -16,7 +16,7 @@ public class Main {
 
 
         Data.init(Data.roomName, Data.roomLocked, Data.roomItemCollection, Data.roomDoorCollection);
-
+        PrintItemInRoom(Data.currentRoom);
 
         do {
             System.out.print("Enter direction you want to go [N,S,E,W], or [Q] to quit > ");
@@ -62,8 +62,19 @@ public class Main {
         if (newRoom != Data.currentRoom) {
             Data.counter++;
             Data.currentRoom = newRoom;
+            PrintItemInRoom(newRoom);
         }
 
+    }
+
+    public static void PrintItemInRoom(int room) {
+        System.out.printf("%s has these item(s):\n", room);
+       if ( Data.roomItemCollection.containsKey(room) ) {
+           ArrayList<String> ItemCollection = Data.roomItemCollection.get(room);
+           for (String item : ItemCollection) {
+               System.out.println("  * "+item);
+           }
+       }
     }
 
     private static void quit(int counter) {
