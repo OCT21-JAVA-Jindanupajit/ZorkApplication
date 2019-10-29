@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Random;
 
 public class Data {
 
@@ -7,15 +9,24 @@ public class Data {
         public static HashMap<Integer, Boolean> roomLocked = new HashMap<>();
         public static HashMap<Integer, ArrayList<String>> roomItemCollection = new HashMap<>();
         public static HashMap<Integer, HashMap<String, Integer>> roomDoorCollection = new HashMap<>();
+        public static HashMap<Integer, Float> roomMoneyCollection = new HashMap<>();
         public static int counter= 0;
         public static int currentRoom = 1;
+        public static float myMoney = 0f;
+        public static int roomWithCharacter;
+        public static String characterName = "Victor";
+        public static ArrayList<Integer> roomSeen = new ArrayList<>();
+
 
 
         public static void init(
                 HashMap<Integer, String> roomName,
                 HashMap<Integer, Boolean> roomLocked,
                 HashMap<Integer, ArrayList<String>> roomItemCollection,
-                HashMap<Integer, HashMap<String, Integer>> roomDoorCollection) {
+                HashMap<Integer, HashMap<String, Integer>> roomDoorCollection,
+                HashMap<Integer, Float> roomMoneyCollection) {
+
+                Random r = new Random();
 
                 roomName.put(1,"foyer");
                 roomLocked.put(1,false);
@@ -25,6 +36,7 @@ public class Data {
                 HashMap<String, Integer> doorInRoom1= new HashMap<>();
                         doorInRoom1.put("N",2);
                 roomDoorCollection.put(1,doorInRoom1);
+                roomMoneyCollection.put(1,1000f * r.nextFloat());
 
                 roomName.put(2,"front room");
                 roomLocked.put(2,false);
@@ -36,6 +48,7 @@ public class Data {
                         doorInRoom2.put("W",3);
                         doorInRoom2.put("E",4);
                 roomDoorCollection.put(2,doorInRoom2);
+                roomMoneyCollection.put(2,1000f * r.nextFloat());
 
 
                 roomName.put(3,"library");
@@ -47,6 +60,7 @@ public class Data {
                 doorInRoom3.put("E",2);
                 doorInRoom3.put("N",5);
                 roomDoorCollection.put(3,doorInRoom3);
+                roomMoneyCollection.put(3,1000f * r.nextFloat());
 
                 roomName.put(4,"kitchen");
                 roomLocked.put(4,false);
@@ -57,6 +71,7 @@ public class Data {
                 doorInRoom4.put("W",2);
                 doorInRoom4.put("N",7);
                 roomDoorCollection.put(4,doorInRoom4);
+                roomMoneyCollection.put(4,1000f * r.nextFloat());
 
 
                 roomName.put(5,"dining room");
@@ -68,6 +83,7 @@ public class Data {
                 HashMap<String, Integer> doorInRoom5= new HashMap<>();
                 doorInRoom5.put("S",3);
                 roomDoorCollection.put(5,doorInRoom5);
+                roomMoneyCollection.put(5,1000f * r.nextFloat());
 
 
                 roomName.put(6,"vault");
@@ -79,6 +95,7 @@ public class Data {
                 doorInRoom6.put("E",7);
                 doorInRoom6.put("EX",8);
                 roomDoorCollection.put(6,doorInRoom6);
+                roomMoneyCollection.put(6,1000f * r.nextFloat());
 
 
                 roomName.put(7,"parlor");
@@ -90,6 +107,7 @@ public class Data {
                 doorInRoom7.put("W",6);
                 doorInRoom7.put("S",4);
                 roomDoorCollection.put(7,doorInRoom7);
+                roomMoneyCollection.put(7,1000f * r.nextFloat());
 
                 roomName.put(8,"secret room");
                 roomLocked.put(8,true);
@@ -99,6 +117,10 @@ public class Data {
                 HashMap<String, Integer> doorInRoom8= new HashMap<>();
                 doorInRoom8.put("W",6);
                 roomDoorCollection.put(8,doorInRoom8);
+                roomMoneyCollection.put(8,1000f * r.nextFloat());
+
+                ArrayList<Integer> keys = new ArrayList<>( roomName.keySet()  );
+                roomWithCharacter = keys.get( r.nextInt( keys.size() ));
 
         }
 

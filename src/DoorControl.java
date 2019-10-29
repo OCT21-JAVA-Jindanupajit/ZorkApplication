@@ -9,14 +9,14 @@ public class DoorControl {
         String roomName;
         Scanner scanner = new Scanner(System.in);
 
-        System.out.printf("Validate %d, %s\n", currentRoom, direction);
+        //System.out.printf("Validate %d, %s\n", currentRoom, direction);
         if(ValidateDirection.IsValid(currentRoom,direction)) {
             HashMap<String,Integer> nextDoor = Data.roomDoorCollection.get(currentRoom);
             nextRoom = nextDoor.get(direction);
 
-            System.out.println("Valid Direction");
+            //System.out.println("Valid Direction");
             if (ValidateDirection.HasSecretRoom(currentRoom, direction)) {
-                System.out.println("Has Secret Room");
+                //System.out.println("Has Secret Room");
                 Random rand = new Random();
                 boolean isLocked = false;
                 int secretRoomRandom;
@@ -53,12 +53,11 @@ public class DoorControl {
 
 
             roomName = Data.roomName.get(nextRoom);
-            System.out.println("You are in " + roomName);
-            System.out.println("  room number #"+nextRoom);
+            System.out.printf("You are in #%d name %s\n\n", nextRoom, roomName);
             return nextRoom;
         }
 
-
+        System.out.println("Not a Valid Direction");
         return nextRoom;
     }
 
